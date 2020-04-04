@@ -19,6 +19,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
+//for heroku
+mongoose.connect(process.env.MONGODB_URI || "mongodb://<heroku_rrd4f7gb>:<dbpassword>@ds033067.mlab.com:33067/heroku_rrd4f7gb", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
+
+
 // routes
 app.use(require("./routes/api.js"));
 app.use(require("./routes/htmlRoutes.js"));
